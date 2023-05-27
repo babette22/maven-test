@@ -14,7 +14,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/babette22/maven-test.git'
             }
         }
-        stage ("Sonarqube scan"){
+        stage ('Sonarqube scan'){
           steps{
           with SonarQubeEnv('sonar') {
         sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=babette22_geo'
